@@ -1,0 +1,1 @@
+# AI-Based-Detection-and-Classification-of-Industrial-Fires-and-Persistent-Thermal-Sources
