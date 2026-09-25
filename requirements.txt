@@ -1,0 +1,26 @@
+# SIH26162 — Review-1 Prototype Dependencies
+# Each package has a specific purpose to avoid unnecessary overhead:
+
+# Tabular data manipulation, CSV ingestion, data cleaning, and dataset operations
+pandas>=2.0.0
+
+# Numerical operations and array math
+numpy>=1.24.0
+
+# Baseline Machine Learning classification (Random Forest), metrics, and preprocessing
+scikit-learn>=1.3.0
+
+# Lightweight, high-performance REST API backend for GIS dashboard
+fastapi>=0.100.0
+
+# Lightweight ASGI server to host the local GIS web dashboard
+uvicorn>=0.23.0
+
+# HTTP requests for optional OpenStreetMap Overpass API queries
+requests>=2.31.0
+
+# Automated unit testing and pipeline validation
+pytest>=7.4.0
+
+# HTTP test client for automated REST API integration testing
+httpx>=0.27.0

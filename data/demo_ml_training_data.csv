@@ -1,0 +1,161 @@
+brightness,bright_t31,frp,distance_to_facility_km,daynight_flag,confidence_score,label
+326.18,299.59,24.95,5.258,1,86.8,Natural/Vegetation Fire
+326.1,293.03,27.26,22.747,1,71.3,Natural/Vegetation Fire
+310.23,291.69,4.79,15.09,1,48.1,Other/Uncertain
+353.41,294.71,12.58,0.867,1,92.4,Persistent Thermal Source
+343.54,294.3,11.07,17.939,1,80.9,Natural/Vegetation Fire
+405.16,312.82,158.09,0.588,0,81.8,Potential Industrial Fire
+327.28,291.55,11.46,6.766,0,75.6,Natural/Vegetation Fire
+354.11,298.88,18.59,0.536,0,75.9,Persistent Thermal Source
+338.77,301.76,21.3,10.568,1,59.6,Natural/Vegetation Fire
+305.11,288.67,4.98,11.118,0,52.3,Other/Uncertain
+371.97,315.9,107.08,0.324,0,81.5,Potential Industrial Fire
+342.53,300.81,9.23,9.541,1,85.6,Natural/Vegetation Fire
+369.77,310.53,121.92,0.949,1,92.8,Potential Industrial Fire
+363.97,294.21,30.73,0.261,0,92.4,Persistent Thermal Source
+370.99,309.77,153.43,0.486,1,91.2,Potential Industrial Fire
+406.77,309.38,66.45,0.105,1,86.5,Potential Industrial Fire
+310.34,294.9,4.84,11.236,1,28.0,Other/Uncertain
+311.89,288.41,4.97,8.994,1,51.4,Other/Uncertain
+352.12,294.18,21.88,20.349,1,74.9,Natural/Vegetation Fire
+409.36,312.86,58.75,1.013,0,94.4,Potential Industrial Fire
+345.72,300.85,26.22,0.1,0,92.5,Persistent Thermal Source
+370.39,302.72,118.19,0.474,1,93.9,Potential Industrial Fire
+372.05,320.45,53.57,1.382,1,87.9,Potential Industrial Fire
+366.57,321.37,96.72,0.583,1,92.0,Potential Industrial Fire
+376.01,318.36,138.09,0.521,0,83.5,Potential Industrial Fire
+311.26,294.87,6.27,16.174,0,25.5,Other/Uncertain
+329.09,290.17,17.47,16.183,1,67.5,Natural/Vegetation Fire
+352.63,295.56,15.6,0.233,0,92.9,Persistent Thermal Source
+322.31,292.78,8.79,3.548,1,39.9,Other/Uncertain
+328.62,295.53,13.57,11.332,1,77.6,Natural/Vegetation Fire
+315.63,295.42,2.53,12.056,1,23.5,Other/Uncertain
+351.78,294.75,29.87,0.507,0,97.7,Persistent Thermal Source
+354.78,298.26,15.98,0.396,0,90.4,Persistent Thermal Source
+330.2,300.76,10.17,14.777,1,89.3,Natural/Vegetation Fire
+413.5,321.15,69.42,0.295,0,92.3,Potential Industrial Fire
+322.16,289.49,10.33,19.826,1,26.3,Other/Uncertain
+349.66,297.47,31.58,0.292,0,88.9,Persistent Thermal Source
+357.0,298.43,16.49,0.653,0,75.6,Persistent Thermal Source
+350.86,302.38,31.74,0.392,1,93.9,Persistent Thermal Source
+342.82,294.57,34.19,21.606,1,68.7,Natural/Vegetation Fire
+380.04,308.55,49.24,0.873,1,88.2,Potential Industrial Fire
+326.22,292.78,2.53,11.865,1,22.4,Other/Uncertain
+326.29,300.69,22.25,24.849,0,72.2,Natural/Vegetation Fire
+329.02,290.35,28.39,16.837,1,58.5,Natural/Vegetation Fire
+327.1,286.64,5.15,2.439,0,26.5,Other/Uncertain
+409.35,319.94,118.83,0.164,1,95.7,Potential Industrial Fire
+333.57,300.42,14.04,24.209,0,88.8,Natural/Vegetation Fire
+409.8,309.31,57.66,0.358,1,80.0,Potential Industrial Fire
+315.71,290.29,10.18,12.072,0,35.8,Other/Uncertain
+358.35,301.9,28.91,0.725,0,79.4,Persistent Thermal Source
+328.05,291.83,14.64,6.955,0,61.4,Natural/Vegetation Fire
+402.37,314.41,112.48,1.353,1,90.9,Potential Industrial Fire
+344.62,294.16,14.17,0.618,0,83.0,Persistent Thermal Source
+338.67,297.44,15.49,7.545,1,64.1,Natural/Vegetation Fire
+412.44,324.21,137.97,0.461,0,84.6,Potential Industrial Fire
+366.65,309.94,117.95,0.969,0,89.8,Potential Industrial Fire
+343.89,301.4,28.24,0.082,0,99.7,Persistent Thermal Source
+306.78,286.15,9.4,18.285,0,24.0,Other/Uncertain
+317.03,288.95,9.77,8.335,1,35.8,Other/Uncertain
+367.3,297.54,32.52,0.572,1,87.6,Persistent Thermal Source
+379.61,310.43,97.45,1.11,0,87.6,Potential Industrial Fire
+318.78,294.09,10.59,7.376,1,34.0,Other/Uncertain
+399.55,310.89,152.72,0.236,1,94.7,Potential Industrial Fire
+321.42,294.9,7.24,11.164,0,37.6,Other/Uncertain
+322.54,294.64,4.42,16.568,0,33.3,Other/Uncertain
+361.52,301.26,34.78,0.377,0,94.4,Persistent Thermal Source
+411.09,304.04,67.54,0.111,1,96.9,Potential Industrial Fire
+340.6,300.23,22.9,15.56,1,66.1,Natural/Vegetation Fire
+328.22,295.37,22.38,8.713,1,65.1,Natural/Vegetation Fire
+383.73,323.87,129.18,0.858,0,88.9,Potential Industrial Fire
+328.45,297.33,15.79,15.997,0,69.2,Natural/Vegetation Fire
+342.81,298.15,29.31,14.217,0,71.5,Natural/Vegetation Fire
+366.48,297.47,34.11,0.816,0,76.7,Persistent Thermal Source
+342.4,302.35,21.85,0.87,1,96.3,Persistent Thermal Source
+342.51,290.93,34.31,24.704,1,71.4,Natural/Vegetation Fire
+414.28,307.57,122.3,1.078,0,84.8,Potential Industrial Fire
+359.1,299.11,14.15,0.337,0,81.1,Persistent Thermal Source
+342.61,298.95,19.65,6.243,1,64.5,Natural/Vegetation Fire
+385.19,303.49,74.2,0.383,0,89.9,Potential Industrial Fire
+382.63,309.01,63.94,0.771,1,84.4,Potential Industrial Fire
+330.13,298.02,33.09,15.47,1,61.2,Natural/Vegetation Fire
+344.89,298.43,12.26,0.427,0,78.0,Persistent Thermal Source
+365.9,313.36,65.56,0.545,1,97.0,Potential Industrial Fire
+338.52,291.55,33.76,16.533,0,76.9,Natural/Vegetation Fire
+305.3,285.94,3.08,1.309,0,50.7,Other/Uncertain
+327.14,295.39,2.41,8.603,0,51.4,Other/Uncertain
+321.61,292.92,7.41,14.124,1,45.1,Other/Uncertain
+345.64,298.66,32.18,0.669,1,92.6,Persistent Thermal Source
+321.47,292.25,1.27,5.062,1,26.9,Other/Uncertain
+358.51,294.41,20.62,0.567,0,96.4,Persistent Thermal Source
+359.49,300.77,30.21,0.713,0,87.4,Persistent Thermal Source
+375.45,314.45,125.02,0.359,1,96.3,Potential Industrial Fire
+317.25,285.57,4.37,3.381,0,39.2,Other/Uncertain
+348.08,292.24,16.74,12.647,1,59.7,Natural/Vegetation Fire
+322.26,293.79,9.25,4.379,0,43.3,Other/Uncertain
+359.13,295.47,13.62,0.582,0,89.6,Persistent Thermal Source
+313.73,291.49,3.68,12.784,1,47.1,Other/Uncertain
+309.72,287.1,1.37,9.864,1,40.6,Other/Uncertain
+316.63,291.55,4.39,11.733,0,42.8,Other/Uncertain
+358.2,294.77,13.19,0.483,0,90.9,Persistent Thermal Source
+414.16,312.74,143.89,0.968,0,81.3,Potential Industrial Fire
+311.76,292.85,6.28,11.062,0,34.0,Other/Uncertain
+306.53,293.15,6.74,16.963,1,49.0,Other/Uncertain
+355.29,298.51,30.36,0.588,1,94.9,Persistent Thermal Source
+409.13,306.34,77.07,0.995,1,97.9,Potential Industrial Fire
+328.53,297.79,28.14,16.042,1,65.0,Natural/Vegetation Fire
+351.73,297.34,30.69,0.853,1,93.8,Persistent Thermal Source
+392.76,314.18,72.81,0.176,1,91.2,Potential Industrial Fire
+366.34,300.26,25.11,0.096,1,99.8,Persistent Thermal Source
+377.05,317.72,115.15,1.175,0,98.2,Potential Industrial Fire
+358.78,295.59,33.63,0.859,1,84.3,Persistent Thermal Source
+344.68,302.12,23.62,0.746,0,97.4,Persistent Thermal Source
+318.7,290.19,5.12,7.498,0,49.8,Other/Uncertain
+325.6,293.86,13.71,10.541,0,85.6,Natural/Vegetation Fire
+337.44,293.28,9.52,22.092,1,90.0,Natural/Vegetation Fire
+354.08,296.28,24.99,18.459,1,75.1,Natural/Vegetation Fire
+308.24,286.94,5.98,8.843,1,30.9,Other/Uncertain
+322.95,288.05,3.2,4.883,0,26.2,Other/Uncertain
+326.36,290.32,18.16,20.927,1,56.0,Natural/Vegetation Fire
+377.94,317.24,80.85,0.752,1,91.4,Potential Industrial Fire
+344.38,296.85,17.61,24.71,1,59.5,Natural/Vegetation Fire
+379.67,302.32,67.87,1.01,0,95.4,Potential Industrial Fire
+343.2,294.37,31.68,0.636,0,77.4,Persistent Thermal Source
+310.89,292.99,6.93,2.762,1,44.4,Other/Uncertain
+395.58,302.16,47.65,0.758,0,82.8,Potential Industrial Fire
+376.8,307.89,49.65,1.009,1,80.5,Potential Industrial Fire
+373.04,314.62,124.57,0.93,0,83.5,Potential Industrial Fire
+366.72,299.16,26.53,0.409,0,83.2,Persistent Thermal Source
+327.65,294.23,2.25,18.48,0,30.9,Other/Uncertain
+315.51,291.64,6.02,11.165,0,28.0,Other/Uncertain
+366.45,299.18,20.93,0.583,0,88.6,Persistent Thermal Source
+360.88,302.78,23.87,0.297,1,81.8,Persistent Thermal Source
+336.11,295.81,24.69,11.432,1,79.9,Natural/Vegetation Fire
+365.14,297.04,20.64,0.094,1,75.9,Persistent Thermal Source
+319.79,292.74,10.11,12.795,0,29.1,Other/Uncertain
+352.91,296.23,20.19,0.684,0,77.9,Persistent Thermal Source
+351.35,296.64,30.62,0.731,1,97.8,Persistent Thermal Source
+353.49,298.71,24.56,12.492,1,84.6,Natural/Vegetation Fire
+387.83,307.02,92.9,1.242,1,96.1,Potential Industrial Fire
+359.17,296.52,33.96,0.667,1,90.3,Persistent Thermal Source
+310.48,286.09,3.43,14.668,1,48.2,Other/Uncertain
+317.49,289.75,4.33,14.827,1,24.9,Other/Uncertain
+398.45,315.36,87.81,1.319,0,80.1,Potential Industrial Fire
+317.87,286.71,2.82,17.346,0,46.4,Other/Uncertain
+370.0,312.56,83.38,0.243,0,80.4,Potential Industrial Fire
+363.39,297.24,14.92,0.475,1,80.4,Persistent Thermal Source
+323.26,291.82,6.33,17.963,1,54.9,Other/Uncertain
+330.77,290.49,12.56,9.49,0,53.5,Natural/Vegetation Fire
+350.87,301.39,11.97,23.422,1,60.3,Natural/Vegetation Fire
+328.36,294.77,34.18,22.108,1,60.3,Natural/Vegetation Fire
+334.29,299.77,26.49,6.996,1,82.9,Natural/Vegetation Fire
+343.5,298.95,22.16,0.8,0,77.9,Persistent Thermal Source
+309.64,292.53,1.88,3.465,0,46.6,Other/Uncertain
+313.34,294.47,3.2,19.511,1,24.9,Other/Uncertain
+379.49,305.71,151.92,1.141,0,82.1,Potential Industrial Fire
+352.12,294.1,32.82,0.091,0,98.8,Persistent Thermal Source
+326.83,293.32,29.77,19.588,0,58.4,Natural/Vegetation Fire
+368.7,310.24,58.32,1.215,1,89.0,Potential Industrial Fire
+354.9,296.67,28.76,23.812,1,59.9,Natural/Vegetation Fire
+330.46,294.15,32.21,13.69,1,56.9,Natural/Vegetation Fire

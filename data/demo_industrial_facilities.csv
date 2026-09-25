@@ -1,0 +1,9 @@
+facility_id,name,latitude,longitude,facility_type,description
+FAC_001,Visakhapatnam Steel Plant (RINL),17.6325,83.1842,Steel Plant,Integrated steel producer with blast furnaces and coke ovens
+FAC_002,HPCL Visakh Refinery,17.6952,83.2558,Oil Refinery,Major petroleum refining unit with flare stacks and hydrocarbon storage
+FAC_003,NTPC Simhadri Thermal Power,17.6035,83.0821,Thermal Power Station,Coal-fired power generation facility with boiler stacks
+FAC_004,Coromandel Fertilizers & Chemicals,17.6812,83.2725,Chemical Complex,Phosphatic fertilizer and heavy chemical manufacturing
+FAC_005,Synergies Castings & Alloy Plant,17.6541,83.1634,Metallurgy Plant,Aluminum alloy wheels casting and heat treatment facility
+FAC_006,JN Pharma City Chemical SEZ,17.5855,83.0452,Pharmaceutical Chemical Hub,Bulk drug chemical synthesis units and thermal oxidizers
+FAC_007,Hindustan Zinc Smelter Complex,17.6710,83.2120,Smelting Facility,Zinc and lead extraction smelting furnaces
+FAC_008,Visakha Agro Processing Complex,17.7120,83.1950,Food Processing Plant,Agro-industrial dairy and biomass processing unit

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIH26162 — Industrial Fire & Thermal Source Monitor</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header>
+    <div class="brand-section">
+      <span class="brand-icon">🔥</span>
+      <div>
+        <div class="brand-title">SIH26162 — Thermal Anomaly & Industrial Fire Monitor</div>
+        <div class="brand-subtitle">NASA FIRMS Format • Geospatial Context • Baseline ML Classification • Risk GIS</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Summary Metrics Cards -->
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="metric-label">Total Thermal Hotspots</div>
+        <div class="metric-value" id="stat-total-events">--</div>
+        <div class="metric-note">NASA FIRMS-format records</div>
+      </div>
+
+      <div class="metric-card card-danger">
+        <div class="metric-label">Potential Industrial Fires</div>
+        <div class="metric-value" id="stat-ind-fires">--</div>
+        <div class="metric-note">High FRP near facility (Prototype ML)</div>
+      </div>
+
+      <div class="metric-card card-warning">
+        <div class="metric-label">Persistent Thermal Sources</div>
+        <div class="metric-value" id="stat-persistent">--</div>
+        <div class="metric-note">Repeated cluster observations</div>
+      </div>
+
+      <div class="metric-card card-success">
+        <div class="metric-label">Vegetation / Natural Fires</div>
+        <div class="metric-value" id="stat-vegetation">--</div>
+        <div class="metric-note">Forest/Rural non-facility fires</div>
+      </div>
+
+      <div class="metric-card card-purple">
+        <div class="metric-label">High Priority Incidents</div>
+        <div class="metric-value" id="stat-high-priority">--</div>
+        <div class="metric-note">Multi-factor Risk Score &ge; 70</div>
+      </div>
+    </div>
+
+    <!-- Workspace Grid -->
+    <div class="workspace-grid">
+
+      <!-- Left Column: Map & Filter Controls & Events Table -->
+      <div class="map-section">
+
+        <!-- Filters Bar -->
+        <div class="filters-bar">
+          <div class="filter-group">
+            <label for="filter-class">Category:</label>
+            <select id="filter-class">
+              <option value="ALL">All Categories</option>
+              <option value="Potential Industrial Fire">Potential Industrial Fire</option>
+              <option value="Persistent Thermal Source">Persistent Thermal Source</option>
+              <option value="Natural/Vegetation Fire">Natural/Vegetation Fire</option>
+              <option value="Other/Uncertain">Other/Uncertain</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-risk">Risk Priority:</label>
+            <select id="filter-risk">
+              <option value="ALL">All Priorities</option>
+              <option value="HIGH">HIGH Priority</option>
+              <option value="MEDIUM">MEDIUM Priority</option>
+              <option value="LOW">LOW Priority</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-persistence">Persistence:</label>
+            <select id="filter-persistence">
+              <option value="ALL">All Persistence</option>
+              <option value="High">High (6+ obs)</option>
+              <option value="Medium">Medium (3-5 obs)</option>
+              <option value="Low">Low (&lt; 3 obs)</option>
+            </select>
+          </div>
+
+          <button id="btn-reset-filters" class="btn-secondary">Reset Filters</button>
+          
+          <div style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);">
+            Active Region: <strong style="color: #38bdf8;">Visakhapatnam Industrial Corridor</strong>
+          </div>
+        </div>
+
+        <!-- Interactive Map Container -->
+        <div id="map"></div>
+
+        <!-- Hotspots Table Area -->
+        <div class="table-section">
+          <div class="table-header-row">
+            <div class="table-title">Thermal Hotspot Events (<span id="table-count">0</span> filtered)</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">Click any row to inspect & center on map</div>
+          </div>
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th>Event ID</th>
+                <th>Acq Date</th>
+                <th>Predicted Category</th>
+                <th>Conf</th>
+                <th>Nearest Facility</th>
+                <th>Dist (km)</th>
+                <th>Persistence</th>
+                <th>Risk Score</th>
+                <th>Priority</th>
+              </tr>
+            </thead>
+            <tbody id="events-table-body">
+              <tr><td colspan="9" style="text-align: center;">Loading events...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Selected Event Details & Live ML Simulator -->
+      <div class="details-section">
+
+        <div class="details-header">
+          <div class="details-title-row">
+            <span class="details-event-id" id="detail-title">Select an Event</span>
+            <span id="detail-badge-category" class="badge-category" style="display:none;">Category</span>
+          </div>
+          <div class="details-notice">Click any map marker or table row to inspect full geospatial and AI analysis</div>
+        </div>
+
+        <!-- Empty Selection Notice -->
+        <div id="empty-state-notice" class="empty-state">
+          <div class="empty-icon">📍</div>
+          <div><strong>No Hotspot Selected</strong></div>
+          <div style="font-size: 0.75rem;">Click on a circular hotspot marker on the map to inspect its ML classification, persistence history, and proximity to industrial infrastructure.</div>
+        </div>
+
+        <!-- Selected Event Content (Hidden initially) -->
+        <div id="event-details-content" style="display: none; display: flex; flex-direction: column; gap: 14px;">
+
+          <!-- Priority & Risk Header Box -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Priority Level</div>
+              <div id="detail-priority-badge" class="badge-priority prio-high">HIGH PRIORITY</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Risk Score</div>
+              <div id="detail-risk-score" style="font-size: 1.4rem; font-weight: 800; color: #38bdf8;">-- / 100</div>
+            </div>
+          </div>
+
+          <!-- Explainable Risk Breakdown -->
+          <div class="risk-expl-box" id="detail-risk-explanation">
+            Formula: Class Weight + Proximity + FRP + Confidence + Persistence
+          </div>
+
+          <!-- Key Details Grid -->
+          <div class="detail-grid">
+            <div class="detail-box">
+              <div class="detail-label">Coordinates</div>
+              <div class="detail-val" id="detail-coords">--</div>
+              <div class="detail-sub">WGS84 Datum</div>
+            </div>
+
+            <div class="detail-box">
+              <div class="detail-label">Acquisition Time</div>
+              <div class="detail-val" id="detail-datetime">--</div>
+              <div class="detail-sub" id="detail-daynight">Day / Night</div>
+            </div>
+
+            <div class="detail-box">
+              <div class="detail-label">ML Confidence</div>
+              <div class="detail-val" id="detail-confidence">--%</div>
+              <div class="detail-sub">Random Forest Classifier</div>
+            </div>
+
+            <div class="detail-box">
+              <div class="detail-label">Persistence Level</div>
+              <div class="detail-val" id="detail-persistence">--</div>
+              <div class="detail-sub" id="detail-occurrences">-- Historical Obs</div>
+            </div>
+
+            <div class="detail-box full-width">
+              <div class="detail-label">Nearest Industrial Facility</div>
+              <div class="detail-val" id="detail-facility-name">--</div>
+              <div class="detail-sub" id="detail-facility-sub">Distance: -- km | Type: --</div>
+            </div>
+
+            <div class="detail-box">
+              <div class="detail-label">Thermal Intensity (FRP)</div>
+              <div class="detail-val" id="detail-frp">-- MW</div>
+              <div class="detail-sub">Fire Radiative Power</div>
+            </div>
+
+            <div class="detail-box">
+              <div class="detail-label">Brightness Temp</div>
+              <div class="detail-val" id="detail-brightness">-- K</div>
+              <div class="detail-sub" id="detail-bright-t31">T31: -- K</div>
+            </div>
+
+            <div class="detail-box full-width">
+              <div class="detail-label">Temporal Observation Window</div>
+              <div class="detail-val" style="font-size: 0.8rem;" id="detail-obs-window">First: -- | Latest: --</div>
+              <div class="detail-sub" id="detail-cluster-id">Cluster ID: --</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Model Simulator (For Review Demonstration) -->
+        <div class="simulator-box">
+          <div style="font-size: 0.82rem; font-weight: 700; color: #38bdf8;">⚡ Live ML Model & Risk Simulator</div>
+          <div style="font-size: 0.7rem; color: var(--text-muted);">Test custom thermal parameters against the trained baseline pipeline</div>
+          
+          <div class="sim-input-row">
+            <div class="sim-group">
+              <label>Brightness (K)</label>
+              <input type="number" id="sim-brightness" value="382.0" step="1.0">
+            </div>
+            <div class="sim-group">
+              <label>FRP (MW)</label>
+              <input type="number" id="sim-frp" value="85.0" step="1.0">
+            </div>
+            <div class="sim-group">
+              <label>Dist to Facility (km)</label>
+              <input type="number" id="sim-dist" value="0.4" step="0.1">
+            </div>
+            <div class="sim-group">
+              <label>Confidence (0-100)</label>
+              <input type="number" id="sim-conf" value="92.0" step="1.0">
+            </div>
+          </div>
+
+          <button id="btn-run-sim" class="btn-primary">Run Live AI Classification</button>
+
+          <div id="sim-result" style="display:none; margin-top: 10px; padding: 8px 10px; background-color: var(--bg-card); border-radius: 6px; font-size: 0.76rem;">
+            <div>Predicted: <strong id="sim-res-class" style="color: #f87171;">--</strong> (<span id="sim-res-conf">--%</span> conf)</div>
+            <div>Risk Score: <strong id="sim-res-score" style="color: #38bdf8;">-- / 100</strong> [<span id="sim-res-prio">--</span>]</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- App JS -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
